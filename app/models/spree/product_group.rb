@@ -40,7 +40,7 @@ module Spree
 
     has_many :promotion_rules
 
-    make_permalink
+    # make_permalink
 
     # Testing utility: creates new *ProductGroup* from search permalink url.
     # Follows conventions for accessing PGs from URLs, as decoded in routes
