@@ -7,11 +7,11 @@ Spree::Product.class_eval do
     self.product_groups = Spree::ProductGroup.all.select { |pg| pg.include?(self) }
   end
 
-  def possible_promotions
-    rules_with_matching_product_groups = product_groups.map(&:promotion_rules).flatten
-    all_rules = promotion_rules + rules_with_matching_product_groups
-    promotion_ids = all_rules.map(&:activator_id).uniq
-    Spree::Promotion.advertised.where(:id => promotion_ids)
-   end
+#   def possible_promotions
+#     rules_with_matching_product_groups = product_groups.map(&:promotion_rules).flatten
+#     all_rules = promotion_rules + rules_with_matching_product_groups
+#     promotion_ids = all_rules.map(&:activator_id).uniq
+#     Spree::Promotion.advertised.where(:id => promotion_ids)
+#    end
 
 end
