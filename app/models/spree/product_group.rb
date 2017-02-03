@@ -38,7 +38,7 @@ module Spree
     has_many :product_scopes, :dependent => :destroy
     accepts_nested_attributes_for :product_scopes
 
-    has_many :promotion_rules
+    # has_many :promotion_rules
 
     # make_permalink
 
