@@ -41,6 +41,7 @@ module Spree
     # has_many :promotion_rules
 
     # make_permalink
+    before_validation :create_permalink
 
     # Testing utility: creates new *ProductGroup* from search permalink url.
     # Follows conventions for accessing PGs from URLs, as decoded in routes
@@ -197,6 +198,10 @@ module Spree
       pg = new(attrs)
       pg.product_scopes.build(:name => 'with_ids', :arguments => [products.map(&:id).join(',')])
       pg
+    end
+        
+    def create_permalink
+      self.permalink = name.parameterize
     end
   end
 end
